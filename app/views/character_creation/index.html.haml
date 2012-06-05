@@ -1,0 +1,24 @@
+%h1 character creation
+=form_tag(:controller => "character_creation", :action=>"create") do
+  .question
+    %h4.label The doctor said I was a
+    .answer{"data-question"=>"sex", "data-answer"=>"A"} A - Boy
+    .answer{"data-question"=>"sex", "data-answer"=>"B"} B - Girl
+  %question
+    %h4.label My parents named me
+    =text_field_tag("name")
+  %question
+    %h4.label I live in
+    =text_field_tag("town")
+  -@questions.each do |question|
+    %question
+      %h4.label=question.question
+      .answer{"data-question"=>question.id, "data-answer"=>"A"}=question.a
+      .answer{"data-question"=>question.id, "data-answer"=>"B"}=question.b
+      .answer{"data-question"=>question.id, "data-answer"=>"C"}=question.c
+      .answer{"data-question"=>question.id, "data-answer"=>"D"}=question.d
+      .answer{"data-question"=>question.id, "data-answer"=>"E"}=question.e
+      =hidden_field_tag("answer-#{question.id}")
+  %input{"type"=>"submit", "value"=>"Start game"}
+:javascript
+  CharacterCreation.init()

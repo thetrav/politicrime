@@ -18,7 +18,7 @@ class CreateTables < ActiveRecord::Migration
       t.string :name
     end
 
-    create_table :person do |t|
+    create_table :people do |t|
       t.string :first_name
       t.string :last_name
       t.string :alias
@@ -26,6 +26,28 @@ class CreateTables < ActiveRecord::Migration
       t.integer :age
       t.integer :leaning
       t.integer :occupation_id
+
+    end
+
+    create_table :attributes do |t|
+      t.string :name
+      t.integer :value
+      t.integer :person_id
+    end
+
+    create_table :skills do |t|
+      t.string :name
+      t.integer :value
+      t.integer :person_id
+    end
+
+    create_table :starting_questions do |t|
+      t.string :question
+      t.string :a
+      t.string :b
+      t.string :c
+      t.string :d
+      t.string :e
     end
   end
 
