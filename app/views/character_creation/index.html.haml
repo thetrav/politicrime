@@ -13,11 +13,8 @@
   -@questions.each do |question|
     %question
       %h4.label=question.question
-      .answer{"data-question"=>question.id, "data-answer"=>"A"}=question.a
-      .answer{"data-question"=>question.id, "data-answer"=>"B"}=question.b
-      .answer{"data-question"=>question.id, "data-answer"=>"C"}=question.c
-      .answer{"data-question"=>question.id, "data-answer"=>"D"}=question.d
-      .answer{"data-question"=>question.id, "data-answer"=>"E"}=question.e
+      -question.starting_answers.each do |answer|
+        .answer{"data-question"=>question.id, "data-answer"=>answer.id}=answer.label
       =hidden_field_tag("answer-#{question.id}")
   %input{"type"=>"submit", "value"=>"Start game"}
 :javascript

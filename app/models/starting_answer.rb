@@ -9,4 +9,24 @@ class StartingAnswer < ActiveRecord::Base
     mods[type][key] = value
   end
 
+  def apply(person)
+    attributes = mods[:attribute]
+    attributes ||= {}
+    attributes.each_pair do |k,v|
+      person.attributes.find_by_name(k).value += v
+    end
+
+    skills = mods[:skill]
+    skills ||= {}
+    skills.each_pair do |k,v|
+      skill = person.skills.find_by_name(k)
+      if skill.nil?
+        skill = Skill.create(:name => k, :value => v)
+        person.skills << skill
+      else
+        skill.value += v
+      end
+    end
+  end
+
 end
