@@ -43,11 +43,12 @@ class CreateTables < ActiveRecord::Migration
 
     create_table :starting_questions do |t|
       t.string :question
-      t.string :a
-      t.string :b
-      t.string :c
-      t.string :d
-      t.string :e
+    end
+
+    create_table :starting_answers do |t|
+      t.string :label
+      t.text :mods
+      t.integer :starting_question_id
     end
   end
 
