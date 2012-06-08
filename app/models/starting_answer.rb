@@ -10,10 +10,12 @@ class StartingAnswer < ActiveRecord::Base
   end
 
   def apply(person)
-    attributes = mods[:attribute]
-    attributes ||= {}
-    attributes.each_pair do |k,v|
-      person.attributes.find_by_name(k).value += v
+    puts "applying"
+    stat = mods[:stat]
+    stat ||= {}
+    stat.each_pair do |k,v|
+      puts "key #{k} value #{v}"
+      person.stats.find_by_name(k).value += v
     end
 
     skills = mods[:skill]

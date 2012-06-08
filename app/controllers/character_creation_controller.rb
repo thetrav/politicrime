@@ -3,8 +3,8 @@ class CharacterCreationController < ApplicationController
     @questions = StartingQuestion.includes(:starting_answers).all
   end
 
-  def attribute (name, val)
-    @leader.attributes << Attribute.create(:name => name, :value => val)
+  def stat (name, val)
+    @leader.stats << Stat.create(:name => name, :value => val)
   end
 
   def create
@@ -14,19 +14,22 @@ class CharacterCreationController < ApplicationController
                             :male => params[:sex].eql?("A"),
                             :age => params[:age],
                             :leaning => 2)
-    attribute(:heart, 8)
-    attribute(:wisdom, 1)
-    attribute(:intelligence, 3)
-    attribute(:agility, 5)
-    attribute(:strength, 4)
-    attribute(:health, 6)
-    attribute(:charisma, 4)
+    stat(:heart, 8)
+    stat(:wisdom, 1)
+    stat(:intelligence, 3)
+    stat(:agility, 5)
+    stat(:strength, 4)
+    stat(:health, 6)
+    stat(:charisma, 4)
 
     StartingQuestion.includes(:starting_answers).each do |question|
       question.starting_answers.find(params["answer-#{question.id}"]).apply(@leader)
     end
 
-    @leader.save!
 
+  end
+
+  def show
+    puts "player #{params[:id]}"
   end
 end

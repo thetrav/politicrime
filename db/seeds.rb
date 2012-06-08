@@ -65,67 +65,67 @@ end
 
 question "The day I was born in 1984..." do
   answer "the Polish priest Popieluszko was kidnapped by government agents." do
-     mod :attribute, :agility, +2
+     mod :stat, :agility, +2
   end
   answer "was the 3rd anniversary of the assassination attempt on Ronald Reagan." do
-    mod :attribute, :strength, +2
+    mod :stat, :strength, +2
   end
   answer "the Macintosh was introduced." do
-    mod :attribute, :intelligence, +2
+    mod :stat, :intelligence, +2
   end
   answer "the Nobel Peace Prize went to Desmond Tutu for opposition to apartheid." do
-    mod :attribute, :heart, +2
+    mod :stat, :heart, +2
   end
   answer "the Sandanista Front won the elections in Nicaragua." do
-    mod :attribute, :charisma, +2
+    mod :stat, :charisma, +2
   end
 end
 
 question "When I was bad..." do
   answer "my parents grounded me and hid my toys, but I knew where they put them." do
     mod :skill, :security, +1
-    mod :attribute, :agility, +1
+    mod :stat, :agility, +1
   end
   answer "my father beat me.  I learned to take a punch earlier than most." do
     mod :skill, :hand_to_hand, +1
-    mod :attribute, :health, +1
+    mod :stat, :health, +1
   end
   answer "I was sent to my room, where I studied quietly by myself, alone." do
     mod :skill, :writing, +1
-    mod :attribute, :intelligence, +1
+    mod :stat, :intelligence, +1
   end
   answer "my parents argued with each other about me, but I was never punished." do
     mod :skill, :persuasion, +1
-    mod :attribute, :heart, +1
+    mod :stat, :heart, +1
   end
   answer "my father lectured me endlessly, trying to make me think like him." do
     mod :skill, :psychology, +1
-    mod :attribute, :charisma, +1
+    mod :stat, :charisma, +1
   end
 end
 
 question "In elementary shool ..." do
   answer "I was mischievous, and always up to something." do
     mod :skill, :disguise, +1
-    mod :attribute, :agility, +1
+    mod :stat, :agility, +1
   end
   answer "I had a lot of repressed anger.  I hurt animals." do
     mod :skill, :psychology, +1
-    mod :attribute, :agility, +1
-    mod :attribute, :heart, -1
-    mod :attribute, :strength, +1
+    mod :stat, :agility, +1
+    mod :stat, :heart, -1
+    mod :stat, :strength, +1
   end
   answer "I was at the head of the class, and I worked very hard." do
     mod :skill, :writing, +1
-    mod :attribute, :intelligence, +1
+    mod :stat, :intelligence, +1
   end
   answer "I was unruly and often fought with the other children." do
     mod :skill, :hand_to_hand, +1
-    mod :attribute, :strength, +1
+    mod :stat, :strength, +1
   end
   answer "I was the class clown.  I even had some friends." do
     mod :skill, :persuasion, +1
-    mod :attribute, :charisma, +1
+    mod :stat, :charisma, +1
   end
 end
 
@@ -149,23 +149,23 @@ end
 
 question "In junior high school" do
   answer "I was into chemistry.  I wanted to know what made the world tick." do
-    mod :attribute, :intelligence, +2
+    mod :stat, :intelligence, +2
     mod :skill, :science, +2
   end
   answer "I played guitar in a grunge band.  We sucked, but so did life." do
-    mod :attribute, :charisma, +2
+    mod :stat, :charisma, +2
     mod :skill, :music, +2
   end
   answer "I drew things, a lot.  I was drawing a world better than this." do
-    mod :attribute, :heart, +2
+    mod :stat, :heart, +2
     mod :skill, :art, +2
   end
   answer "I played violent video games at home.  I was a total outcast." do
-    mod :attribute, :agility, +2
+    mod :stat, :agility, +2
     mod :skill, :computers, +2
   end
   answer "I was obsessed with swords, and started lifting weights." do
-    mod :attribute, :strength, +2
+    mod :stat, :strength, +2
     mod :skill, :sword, +2
   end
 end
@@ -194,49 +194,49 @@ end
 
 question "Well, I knew it had reached a crescendo when..." do
   answer "I stole a cop car when I was only 14.  I went to juvie for 6 months." do
-    mod :attribute, :intelligence, +1
+    mod :stat, :intelligence, +1
     mod :skill, :driving, +1
     mod :skill, :security, +1
   end
   answer "my step mom shot her ex-husband, my dad, with a shotgun.  She got off." do
-    mod :attribute, :agility, +1
+    mod :stat, :agility, +1
     mod :skill, :shotgun, +2
   end
   answer "I tried wrestling for a quarter, desperate to fit in." do
-    mod :attribute, :strength, +1
+    mod :stat, :strength, +1
     mod :skill, :hand_to_hand, +2
   end
   answer "I got caught making out, and now I needed to be 'cured' of homosexuality." do
-    mod :attribute, :heart, +1
+    mod :stat, :heart, +1
     mod :skill, :seduction, +1
     mod :skill, :religion, +1
     #todo: gay lawyer=true
   end
   answer "I resorted to controlling people.  Had my own clique of outcasts." do
-    mod :attribute, :charisma, +1
+    mod :stat, :charisma, +1
     mod :skill, :persuasion, +1
   end
 end
 question "I was only 15 when I ran away, and..." do
   answer "I started robbing houses:  rich people only.  I was fed up with their crap." do
-    mod :attribute, :agility, +1
+    mod :stat, :agility, +1
     mod :skill, :stealth, +1
     mod :skill, :security, +1
   end
   answer "I hung out with thugs and beat the shit out of people." do
-    mod :attribute, :strength, +1
+    mod :stat, :strength, +1
     mod :skill, :hand_to_hand, +2
   end
   answer "I got a horrible job working fast food, smiling as people fed the man." do
-    mod :attribute, :charisma, +1
+    mod :stat, :charisma, +1
     mod :skill, :business, +1
   end
   answer "I let people pay me for sex.  I needed the money to survive." do
-    mod :attribute, :charisma, +1
+    mod :stat, :charisma, +1
     mod :skill, :seduction, +2
   end
   answer "I volunteered for a left-wing candidate. It wasn't *real*, though, you know?" do
-    mod :attribute, :intelligence, +1
+    mod :stat, :intelligence, +1
     mod :skill, :law, +1
     mod :skill, :persuasion, +1
   end
@@ -261,8 +261,8 @@ end
 
 question "For the past few years, I've been..." do
   answer "stealing from Corporations.  I know they're still keeping more secrets." do
-    mod :attribute, :intelligence, +2
-    mod :attribute, :agility, +2
+    mod :stat, :intelligence, +2
+    mod :stat, :agility, +2
     mod :skill, :security, +2
     mod :skill, :stealth, +2
     #todo: profession, thief
@@ -271,8 +271,8 @@ question "For the past few years, I've been..." do
     #todo: black clothes armor
   end
   answer "a violent criminal.  Nothing can change me, or stand in my way." do
-    mod :attribute, :agility, +2
-    mod :attribute, :health, +2
+    mod :stat, :agility, +2
+    mod :stat, :health, +2
     mod :skill, :rifle, +2
     mod :skill, :pistol, +2
     #todo: profession gang member
@@ -280,7 +280,7 @@ question "For the past few years, I've been..." do
     #todo: recruit gang
   end
   answer "taking college courses.  I can see how much the country needs help." do
-    mod :attribute, :intelligence, +4
+    mod :stat, :intelligence, +4
     mod :skill, :science, +2
     mod :skill, :computers, +2
     mod :skill, :writing, +2
@@ -292,25 +292,25 @@ question "For the past few years, I've been..." do
     #todo: +$200
   end
   answer "surviving alone, just like anyone.  But we can't go on like this." do
-    mod :attribute, :intelligence, +1
-    mod :attribute, :agility, +2
-    mod :attribute, :health, +2
+    mod :stat, :intelligence, +1
+    mod :stat, :agility, +2
+    mod :stat, :health, +2
     mod :skill, :first_aid, +2
     mod :skill, :street_sense, +2
     #todo: profession high school drop out
     #todo: residential shelter for base
 
-    mod :attribute, :heart, +1
-    mod :attribute, :intelligence, +1
-    mod :attribute, :agility, +1
-    mod :attribute, :strength, +1
-    mod :attribute, :health, +1
-    mod :attribute, :charisma, +1
+    mod :stat, :heart, +1
+    mod :stat, :intelligence, +1
+    mod :stat, :agility, +1
+    mod :stat, :strength, +1
+    mod :stat, :health, +1
+    mod :stat, :charisma, +1
 
   end
   answer "writing my manifesto and refining my image.  I'm ready to lead." do
-    mod :attribute, :charisma, +2
-    mod :attribute, :intelligence, +2
+    mod :stat, :charisma, +2
+    mod :stat, :intelligence, +2
     mod :skill, :law, +1
     mod :skill, :writing, +1
     mod :skill, :persuasion, +2

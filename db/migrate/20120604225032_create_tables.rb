@@ -29,7 +29,7 @@ class CreateTables < ActiveRecord::Migration
 
     end
 
-    create_table :attributes do |t|
+    create_table :stats do |t|
       t.string :name
       t.integer :value
       t.integer :person_id
