@@ -10,12 +10,21 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+
+//= require coffee-script
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
+//= require json2
 //= require underscore
+//= require underscore.string
+//= require haml
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
-//= require backbone/politicrime
-//= require_tree .
+
+//= require backbone/common/Politicrime
+//= require backbone/common/models/BaseModel
+//= require backbone/common/views/BaseView
+

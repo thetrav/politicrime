@@ -1,21 +1,6 @@
-%h1 character creation
-=form_tag(:controller => "character_creation", :action=>"create") do
-  .question
-    %h4.label The doctor said I was a
-    .answer{"data-question"=>"sex", "data-answer"=>"A"} A - Boy
-    .answer{"data-question"=>"sex", "data-answer"=>"B"} B - Girl
-  %question
-    %h4.label My parents named me
-    =text_field_tag("name")
-  %question
-    %h4.label I live in
-    =text_field_tag("town")
-  -@questions.each do |question|
-    %question
-      %h4.label=question.question
-      -question.starting_answers.each do |answer|
-        .answer{"data-question"=>question.id, "data-answer"=>answer.id}=answer.label
-      =hidden_field_tag("answer-#{question.id}")
-  %input{"type"=>"submit", "value"=>"Start game"}
+= content_for(:head_includes) do
+  != javascript_include_tag "backbone/character_creation/character_creation"
+
 :javascript
+  CharacterCreation.bootstrapData = #{@questions.to_json(:include => :starting_answers)}
   CharacterCreation.init()

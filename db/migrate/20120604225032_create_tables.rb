@@ -26,7 +26,7 @@ class CreateTables < ActiveRecord::Migration
       t.integer :age
       t.integer :leaning
       t.integer :occupation_id
-
+      t.integer :squad_id
     end
 
     create_table :stats do |t|
@@ -50,8 +50,20 @@ class CreateTables < ActiveRecord::Migration
       t.text :mods
       t.integer :starting_question_id
     end
+
+    create_table :areas do |t|
+      t.string :name
+      t.integer :parent_area_id
+    end
+
+    create_table :locations do |t|
+      t.string :name
+      t.integer :area_id
+    end
+
+    create_table :squads do |t|
+      t.string :name
+    end
   end
 
-  def down
-  end
 end

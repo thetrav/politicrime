@@ -1,0 +1,4 @@
+.question
+  %h4.label=@question.question
+  != _.map(@question.starting_answers, (answer) => JST["backbone/character_creation/templates/answer"].call(question:@question, answer:answer)).join("")
+

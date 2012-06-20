@@ -1,0 +1,10 @@
+.question
+  %h4.label The doctor said I was a
+  %input.answer{type:"radio", name:"sex", value:"A"} Boy
+  %input.answer{type:"radio", name:"sex", value:"B"} Girl
+.question
+  %h4.label My parents named me
+  %input{id:"name"}
+.question
+  %h4.label I live in
+  %input{id:"town"}

@@ -1,6 +1,8 @@
 class Person < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :alias, :male, :age, :leaning
 
+  belongs_to :squad
+
   has_many :stats
   has_many :skills
 

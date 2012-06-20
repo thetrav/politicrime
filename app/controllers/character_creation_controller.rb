@@ -26,6 +26,7 @@ class CharacterCreationController < ApplicationController
       question.starting_answers.find(params["answer-#{question.id}"]).apply(@leader)
     end
 
+    @leader.squad = Squad.create(:name => "Liberal Crime Squad")
 
   end
 
