@@ -10,6 +10,21 @@ label {
 
   }
 }
+
+.modal {
+  padding: 10px;
+  .dialog-content .question {
+    display: block;
+  }
+
+  .btn-primary {
+    float: right;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 80px 5px 80px;
+  }
+}
+
 .hover, .selected{
   background-color:#ddd;
 }
