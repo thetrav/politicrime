@@ -1,0 +1,3 @@
+%input.answer{type:"radio", id:@answer.id ,name:@question.id, "data-question": @question.id, "data-answer": @answer.id}
+%label{for:@answer.id}=@answer.label
+%br
