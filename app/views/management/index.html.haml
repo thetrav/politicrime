@@ -1,5 +1,8 @@
+= content_for(:head_includes) do
+  != javascript_include_tag "backbone/management/management_app"
+
 .app
 
-
 :javascript
-   Politicrime.init()
+  Politicrime.init()
+  Management.init()

@@ -41,7 +41,7 @@ CharacterCreation.Views.QuestionsView = Politicrime.Views.BaseView.extend(
     @currentIndex = i
     $(".dialog-content").html(@questionsHtml[@currentIndex])
     @$modal.find(".btn-primary").unbind("click")
-    @$model.on("shown", -> @$modal.unbind("shown"); @$model.find("input").first().focus())
+    @$modal.on("shown", -> @$modal.unbind("shown"); @$model.find("input").first().focus())
     @$modal.modal("show")
     @$modal.find(".btn-primary").click((e) => @questionAnswered(e))
 

@@ -1,0 +1,3 @@
+%li
+  =@model.get("first_name")
+  =@model.get("last_name")

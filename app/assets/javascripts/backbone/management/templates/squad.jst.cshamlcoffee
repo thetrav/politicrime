@@ -1,0 +1,3 @@
+%h1=@model.get("name")
+%ul
+  != _.map(@model.people(), (person) => JST["backbone/management/templates/squad_person"].call(model: person)).join("")

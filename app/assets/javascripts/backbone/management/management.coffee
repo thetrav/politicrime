@@ -4,19 +4,19 @@ window.Management = {
   Collections: {}
 
   init: () ->
-    Collections.squads = new Collections.Squads()
-    Collections.squads.fetch(
-      success: @squadsRetrieved
+    Management.Collections.squads = new Management.Collections.Squads()
+    Management.Collections.squads.fetch(
+      success: () => @squadsRetrieved()
     )
 
-    $('.app').append(Views.squad)
-
   squadsRetrieved: () ->
-    Collections.people = new Collections.People()
-    Collections.people.fetch(
-      success: @peopleRetrieved
+    Management.Collections.people = new Management.Collections.People()
+    Management.Collections.people.fetch(
+      success: => @peopleRetrieved()
     )
 
   peopleRetrieved: () ->
-    console.log("retrieved squads and people")
+    Management.Views.squadsView = new Management.Views.SquadsView(model:Management.Collections.squads)
+    Management.Views.squadsView.render()
+    $('.app').append(Management.Views.squadsView.$el)
 }
