@@ -5,7 +5,8 @@
     %input.answer{type:"radio", name:"sex", value:"B"} Girl
   .question
     %h4.label My parents named me
-    %input{id:"name"}
+    %input{id:"first_name"}
+    %input{id:"last_name"}
   .question
     %h4.label I live in
     %input{id:"town"}
