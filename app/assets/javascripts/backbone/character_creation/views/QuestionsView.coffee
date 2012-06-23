@@ -19,7 +19,11 @@ CharacterCreation.Views.QuestionsView = Politicrime.Views.BaseView.extend(
         """)
     @$el.append(@$modal)
     @$dialogContent = @$modal.find('.dialog-content')
-    @$modal.on('shown', () => @$dialogContent.html(@firstQuestions); @$modal.unbind("shown"))
+    @$modal.on('shown', =>
+      @$modal.unbind("shown")
+      @$dialogContent.html(@firstQuestions)
+      @$modal.find("input").first().focus()
+    )
     @$modal.modal("show")
     @$modal.find(".btn-primary").click((e) => @firstNext(e))
 
@@ -37,7 +41,7 @@ CharacterCreation.Views.QuestionsView = Politicrime.Views.BaseView.extend(
     @currentIndex = i
     $(".dialog-content").html(@questionsHtml[@currentIndex])
     @$modal.find(".btn-primary").unbind("click")
-    console.log("show question #{i}")
+    @$model.on("shown", -> @$modal.unbind("shown"); @$model.find("input").first().focus())
     @$modal.modal("show")
     @$modal.find(".btn-primary").click((e) => @questionAnswered(e))
 
@@ -52,7 +56,7 @@ CharacterCreation.Views.QuestionsView = Politicrime.Views.BaseView.extend(
       @nextQuestion()
 
   submitForm: ->
-    $.post("character_creation/create", @data, (d) -> console.log("success! #{d}"))
+    $.post("character_creation/create", @data, (d) -> window.location = "game")
 
   nextQuestion: ->
     @$modal.on("hidden", => @$modal.unbind("hidden"); @showQuestion(@currentIndex+1))
